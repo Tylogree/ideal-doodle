@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 // funções matemáticas.
 
@@ -14,13 +15,13 @@ int funcao1g(int range, int arga, int argb, char *arquivo){
 	pointer = fopen(arquivo, "a");
 
 	// Criação de um cabeçalho para o arquivo
-	char *cabecalho = "Função de 1° grau: %d resultados.\nValor de A = %d\nValor de B = %d\n", range, arga, argb;
+	char cabecalho[256] = "Função de 1° grau: %d resultados.\nValor de A = %d\nValor de B = %d\n", range, arga, argb;
 	fprintf(pointer, cabecalho);
 
 	// Cálculo da função em si
     	for(int i = 0; i <= range; i++){
         	int y = (arga * i) + argb; // Aqui, é onde a var y recebe o valor
-        	char *response = "\nx = %d || y = %d", i, y; // Armazenamento do valor Y e X em uma string
+        	char response[200] = "\nx = %d || y = %d", i, y; // Armazenamento do valor Y e X em uma string
 		fprintf(pointer, response); // escrita no arquivo
     	}
 	    	
@@ -32,7 +33,7 @@ int funcao1g(int range, int arga, int argb, char *arquivo){
 // Função de 2° Grau: f(x) = ax² + bx + c
 // Uso:
 // funcao2g(numero_de_resultados, valor_a, valor_b, valor_c, "arquivo_para_armazenamento.txt");
-//
+/*
 int funcao2g(int range, int arga, int argb, int argc, char *arquivo){
 	
 	// Pointer do arquivo de armazenamento
@@ -55,3 +56,6 @@ int funcao2g(int range, int arga, int argb, int argc, char *arquivo){
 	free(y); free(response); free(cabecalho); // Excluir variáveis pré-feitas
 	
 }
+
+*/
+
